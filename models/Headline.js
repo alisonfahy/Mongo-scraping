@@ -1,0 +1,24 @@
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema;
+
+let headlineSchema = new Schema({
+    headline: {
+        type: String, 
+        required: true, 
+        unique: true
+    },
+    summary: {
+        type: String, 
+        required: true
+    },
+    date: String, 
+    save: {
+        type: Boolean, 
+        default: false
+    }
+});
+
+let Headline = mongoose.model("Headline", headlineSchema);
+
+module.exports = Headline;
